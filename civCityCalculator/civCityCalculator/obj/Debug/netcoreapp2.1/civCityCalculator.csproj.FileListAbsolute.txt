@@ -1,0 +1,11 @@
+C:\projects\c#projects\.NET Framework Demo\civCityCalculator\civCityCalculator\bin\Debug\netcoreapp2.1\civCityCalculator.deps.json
+C:\projects\c#projects\.NET Framework Demo\civCityCalculator\civCityCalculator\bin\Debug\netcoreapp2.1\civCityCalculator.runtimeconfig.json
+C:\projects\c#projects\.NET Framework Demo\civCityCalculator\civCityCalculator\bin\Debug\netcoreapp2.1\civCityCalculator.runtimeconfig.dev.json
+C:\projects\c#projects\.NET Framework Demo\civCityCalculator\civCityCalculator\bin\Debug\netcoreapp2.1\civCityCalculator.dll
+C:\projects\c#projects\.NET Framework Demo\civCityCalculator\civCityCalculator\bin\Debug\netcoreapp2.1\civCityCalculator.pdb
+C:\projects\c#projects\.NET Framework Demo\civCityCalculator\civCityCalculator\obj\Debug\netcoreapp2.1\civCityCalculator.csproj.CoreCompileInputs.cache
+C:\projects\c#projects\.NET Framework Demo\civCityCalculator\civCityCalculator\obj\Debug\netcoreapp2.1\civCityCalculator.AssemblyInfoInputs.cache
+C:\projects\c#projects\.NET Framework Demo\civCityCalculator\civCityCalculator\obj\Debug\netcoreapp2.1\civCityCalculator.AssemblyInfo.cs
+C:\projects\c#projects\.NET Framework Demo\civCityCalculator\civCityCalculator\obj\Debug\netcoreapp2.1\civCityCalculator.dll
+C:\projects\c#projects\.NET Framework Demo\civCityCalculator\civCityCalculator\obj\Debug\netcoreapp2.1\civCityCalculator.pdb
+C:\projects\c#projects\.NET Framework Demo\civCityCalculator\civCityCalculator\obj\Debug\netcoreapp2.1\civCityCalculator.csprojAssemblyReference.cache
