@@ -8,3 +8,14 @@ C:\projects\c#projects\.NET Framework Demo\OOP for Student Objects\OOP for Stude
 C:\projects\c#projects\.NET Framework Demo\OOP for Student Objects\OOP for Student Objects\bin\Debug\netcoreapp2.1\OOP for Student Objects.pdb
 C:\projects\c#projects\.NET Framework Demo\OOP for Student Objects\OOP for Student Objects\obj\Debug\netcoreapp2.1\OOP for Student Objects.dll
 C:\projects\c#projects\.NET Framework Demo\OOP for Student Objects\OOP for Student Objects\obj\Debug\netcoreapp2.1\OOP for Student Objects.pdb
+C:\projects\c#projects\learning-c#\OOP for Student Objects\OOP for Student Objects\obj\Debug\netcoreapp2.1\OOP for Student Objects.csprojAssemblyReference.cache
+C:\projects\c#projects\learning-c#\OOP for Student Objects\OOP for Student Objects\obj\Debug\netcoreapp2.1\OOP for Student Objects.csproj.CoreCompileInputs.cache
+C:\projects\c#projects\learning-c#\OOP for Student Objects\OOP for Student Objects\obj\Debug\netcoreapp2.1\OOP for Student Objects.AssemblyInfoInputs.cache
+C:\projects\c#projects\learning-c#\OOP for Student Objects\OOP for Student Objects\obj\Debug\netcoreapp2.1\OOP for Student Objects.AssemblyInfo.cs
+C:\projects\c#projects\learning-c#\OOP for Student Objects\OOP for Student Objects\obj\Debug\netcoreapp2.1\OOP for Student Objects.dll
+C:\projects\c#projects\learning-c#\OOP for Student Objects\OOP for Student Objects\obj\Debug\netcoreapp2.1\OOP for Student Objects.pdb
+C:\projects\c#projects\learning-c#\OOP for Student Objects\OOP for Student Objects\bin\Debug\netcoreapp2.1\OOP for Student Objects.deps.json
+C:\projects\c#projects\learning-c#\OOP for Student Objects\OOP for Student Objects\bin\Debug\netcoreapp2.1\OOP for Student Objects.runtimeconfig.json
+C:\projects\c#projects\learning-c#\OOP for Student Objects\OOP for Student Objects\bin\Debug\netcoreapp2.1\OOP for Student Objects.runtimeconfig.dev.json
+C:\projects\c#projects\learning-c#\OOP for Student Objects\OOP for Student Objects\bin\Debug\netcoreapp2.1\OOP for Student Objects.dll
+C:\projects\c#projects\learning-c#\OOP for Student Objects\OOP for Student Objects\bin\Debug\netcoreapp2.1\OOP for Student Objects.pdb

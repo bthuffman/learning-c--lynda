@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projects\\c#projects\\.NET Framework Demo\\OOP for Student Objects\\OOP for Student Objects\\OOP for Student Objects.csproj",
+      "projectUniqueName": "C:\\projects\\c#projects\\learning-c#\\OOP for Student Objects\\OOP for Student Objects\\OOP for Student Objects.csproj",
       "projectName": "OOP for Student Objects",
-      "projectPath": "C:\\projects\\c#projects\\.NET Framework Demo\\OOP for Student Objects\\OOP for Student Objects\\OOP for Student Objects.csproj",
+      "projectPath": "C:\\projects\\c#projects\\learning-c#\\OOP for Student Objects\\OOP for Student Objects\\OOP for Student Objects.csproj",
       "packagesPath": "C:\\Users\\brandon.huffman\\.nuget\\packages\\",
-      "outputPath": "C:\\projects\\c#projects\\.NET Framework Demo\\OOP for Student Objects\\OOP for Student Objects\\obj\\",
+      "outputPath": "C:\\projects\\c#projects\\learning-c#\\OOP for Student Objects\\OOP for Student Objects\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

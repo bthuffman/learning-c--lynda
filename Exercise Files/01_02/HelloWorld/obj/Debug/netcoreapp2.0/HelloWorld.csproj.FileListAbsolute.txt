@@ -9,3 +9,14 @@ C:\Users\Alexander Zanfir\source\repos\HelloWorld\HelloWorld\obj\Debug\netcoreap
 C:\Users\Alexander Zanfir\source\repos\HelloWorld\HelloWorld\obj\Debug\netcoreapp2.0\HelloWorld.AssemblyInfo.cs
 C:\Users\Alexander Zanfir\source\repos\HelloWorld\HelloWorld\obj\Debug\netcoreapp2.0\HelloWorld.dll
 C:\Users\Alexander Zanfir\source\repos\HelloWorld\HelloWorld\obj\Debug\netcoreapp2.0\HelloWorld.pdb
+C:\projects\c#projects\learning-c#\Exercise Files\01_02\HelloWorld\bin\Debug\netcoreapp2.0\HelloWorld.deps.json
+C:\projects\c#projects\learning-c#\Exercise Files\01_02\HelloWorld\bin\Debug\netcoreapp2.0\HelloWorld.runtimeconfig.json
+C:\projects\c#projects\learning-c#\Exercise Files\01_02\HelloWorld\bin\Debug\netcoreapp2.0\HelloWorld.runtimeconfig.dev.json
+C:\projects\c#projects\learning-c#\Exercise Files\01_02\HelloWorld\bin\Debug\netcoreapp2.0\HelloWorld.dll
+C:\projects\c#projects\learning-c#\Exercise Files\01_02\HelloWorld\bin\Debug\netcoreapp2.0\HelloWorld.pdb
+C:\projects\c#projects\learning-c#\Exercise Files\01_02\HelloWorld\obj\Debug\netcoreapp2.0\HelloWorld.csprojAssemblyReference.cache
+C:\projects\c#projects\learning-c#\Exercise Files\01_02\HelloWorld\obj\Debug\netcoreapp2.0\HelloWorld.csproj.CoreCompileInputs.cache
+C:\projects\c#projects\learning-c#\Exercise Files\01_02\HelloWorld\obj\Debug\netcoreapp2.0\HelloWorld.AssemblyInfoInputs.cache
+C:\projects\c#projects\learning-c#\Exercise Files\01_02\HelloWorld\obj\Debug\netcoreapp2.0\HelloWorld.AssemblyInfo.cs
+C:\projects\c#projects\learning-c#\Exercise Files\01_02\HelloWorld\obj\Debug\netcoreapp2.0\HelloWorld.dll
+C:\projects\c#projects\learning-c#\Exercise Files\01_02\HelloWorld\obj\Debug\netcoreapp2.0\HelloWorld.pdb

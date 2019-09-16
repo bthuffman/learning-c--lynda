@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace civCityCalculator
@@ -16,64 +17,45 @@ namespace civCityCalculator
 
             var newNation = new Nation();
             //COMMERCE
-            Console.WriteLine("How many Civs have higher levels of Commerce?");
-            newNation.NumberCivsWithHigherCommerce = int.Parse(Console.ReadLine());
-            decreaseNationalPMInfluence(newNation.NumberCivsWithHigherCommerce, ref decreaseInNationalPMInfluence);
+            
+            newNation.NumberCivsWithHigherCommerce = int.Parse(ConsoleUtility.Ask("How many Civs have higher levels of Commerce?"));
+            DecreasePMInfluence(newNation.NumberCivsWithHigherCommerce, ref decreaseInNationalPMInfluence);
 
-            Console.WriteLine("How many unused trade routes are there?");
-            newNation.NumberUnusedTradeRoutes = int.Parse(Console.ReadLine());
-            decreaseNationalPMInfluence(newNation.NumberUnusedTradeRoutes, ref decreaseInNationalPMInfluence);
+            
+            newNation.NumberUnusedTradeRoutes = int.Parse(ConsoleUtility.Ask("How many unused trade routes are there?"));
+            DecreasePMInfluence(newNation.NumberUnusedTradeRoutes, ref decreaseInNationalPMInfluence);
 
-            Console.WriteLine("How many Civs have higher levels of Culture?");
-            newNation.NumberCivsWithHigherCulture = int.Parse(Console.ReadLine());
-            decreaseNationalPMInfluence(newNation.NumberCivsWithHigherCulture, ref decreaseInNationalPMInfluence);
+            
+            newNation.NumberCivsWithHigherCulture = int.Parse(ConsoleUtility.Ask("How many Civs have higher levels of Culture?"));
+            DecreasePMInfluence(newNation.NumberCivsWithHigherCulture, ref decreaseInNationalPMInfluence);
 
-            Console.WriteLine("How many Civs have higher levels of Tech?");
-            newNation.NumberCivsWithMoreTech = int.Parse(Console.ReadLine());
-            decreaseNationalPMInfluence(newNation.NumberCivsWithMoreTech, ref decreaseInNationalPMInfluence);
+            
+            newNation.NumberCivsWithMoreTech = int.Parse(ConsoleUtility.Ask("How many Civs have higher levels of Tech?"));
+            DecreasePMInfluence(newNation.NumberCivsWithMoreTech, ref decreaseInNationalPMInfluence);
 
-            Console.WriteLine("Is the country at War: y/n?");
-            natBooly = Console.ReadLine();
-            if (natBooly != "y" && natBooly != "n")
-            {
-                TryAgain();
-            }
-            else if (natBooly == "y")
-            {
-                newNation.AtWar = true;
-                decreaseNationalPMInfluence(1, ref decreaseInNationalPMInfluence);
-                Console.WriteLine("(1)The PM's influence has been decreased by a total of: " + decreaseInNationalPMInfluence);
-            }
-            else
-            {
-                Console.WriteLine("Error");
-            }
-            natBooly = "";
+            natBooly = ConsoleUtility.Ask("Is the country at War: y/n?");
+            IfElseUtility.IfElseUtilityMethod(ref natBooly, ref decreaseInNationalPMInfluence, ref newNation.AtWar);
 
-            Console.WriteLine("How many Civs have a bigger Military?");
-            newNation.NumberCivsWithMoreTech = int.Parse(Console.ReadLine());
-            decreaseNationalPMInfluence(newNation.NumberCivsWithMoreTech, ref decreaseInNationalPMInfluence);
+            newNation.NumberCivsWithBiggerMilitary = int.Parse(ConsoleUtility.Ask("How many Civs have a bigger Military?"));
+            DecreasePMInfluence(newNation.NumberCivsWithBiggerMilitary, ref decreaseInNationalPMInfluence);
+            
+            newNation.NumberCivsWithHigherProduction = int.Parse(ConsoleUtility.Ask("How many Civs have higher levels of Production?"));
+            DecreasePMInfluence(newNation.NumberCivsWithHigherProduction, ref decreaseInNationalPMInfluence);
 
-            Console.WriteLine("How many Civs have higher levels of Production?");
-            newNation.NumberCivsWithMoreTech = int.Parse(Console.ReadLine());
-            decreaseNationalPMInfluence(newNation.NumberCivsWithMoreTech, ref decreaseInNationalPMInfluence);
-
-
+            Dump(newNation);
             /*
              * SESSION OF PARLIAMENT
              * */
             Console.WriteLine("Is there a national decision for Parliament to Consider: y/n");
-            DecisionByParliament();
+            //DecisionByParliament();
 
             CityStats(decreaseInNationalPMInfluence);
-
-
         }
 
-        private static void DecisionByParliament()
+        /*private static void DecisionByParliament()
         {
             throw new NotImplementedException();
-        }
+        }*/
 
         private static void CityStats(int decreaseInNationalPMInfluence)
         {
@@ -82,125 +64,47 @@ namespace civCityCalculator
             var calculate = true;
             while (calculate)
             {
-
                 var newCity = new City();
-
-                Console.WriteLine("Name of City:");
-                newCity.Name = Console.ReadLine();
+                
+                newCity.Name = ConsoleUtility.Ask("Name of City:"); ;
 
                 //HOUSING
-
-                Console.WriteLine("City Homeless Pop: ");
-                newCity.Homeless = int.Parse(Console.ReadLine());
-                decreasePMInfluence(newCity.Homeless, ref decreaseInPMInfluence);
+                
+                newCity.Homeless = int.Parse(ConsoleUtility.Ask("City Homeless Pop: "));
+                DecreasePMInfluence(newCity.Homeless, ref decreaseInPMInfluence);
 
                 //FOOD
 
-                Console.WriteLine("Is the City Pop under 4: y/n?");
-                booly = Console.ReadLine();
-                if (booly != "y" && booly != "n")
-                {
-                    TryAgain();
-                }
-                else if (booly == "y")
-                {
-                    newCity.PopUnder4 = true;
-                    decreasePMInfluence(1, ref decreaseInPMInfluence);
-                    Console.WriteLine("(1)The PM's influence has been decreased by a total of: " + decreaseInPMInfluence);
-                }
-                else
-                {
-                    Console.WriteLine("Error");
-                }
-                booly = "";
-
-                Console.WriteLine("Does the City suffer from Starvation: y/n?");
-                booly = Console.ReadLine();
-                if (booly != "y" && booly != "n")
-                {
-                    TryAgain();
-                }
-                else if (booly == "y")
-                {
-                    newCity.Starving = true;
-                    decreasePMInfluence(1, ref decreaseInPMInfluence);
-                    Console.WriteLine("(1)The PM's influence has been decreased by a total of: " + decreaseInPMInfluence);
-                }
-                else
-                {
-                    Console.WriteLine("Error");
-                }
-                booly = "";
-
-                Console.WriteLine("Will the city not grow for 15 or more years: y/n?");
-                booly = Console.ReadLine();
-                if (booly != "y" && booly != "n")
-                {
-                    TryAgain();
-                }
-                else if (booly == "y")
-                {
-                    newCity.GrowthGreaterThan15Turns = true;
-                    decreasePMInfluence(1, ref decreaseInPMInfluence);
-                    Console.WriteLine("(1)The PM's influence has been decreased by a total of: " + decreaseInPMInfluence);
-                }
-                else
-                {
-                    Console.WriteLine("Error");
-                }
-                booly = "";
+                booly = ConsoleUtility.Ask("is the city pop under 4: y/n?");
+                IfElseUtility.IfElseUtilityMethod(ref booly, ref decreaseInPMInfluence, ref newCity.PopUnder4);
+                
+                booly = ConsoleUtility.Ask("Does the City suffer from Starvation: y/n?");
+                IfElseUtility.IfElseUtilityMethod(ref booly, ref decreaseInPMInfluence, ref newCity.Starving);
+                
+                booly = ConsoleUtility.Ask("Will the city not grow for 15 or more years: y/n?");
+                IfElseUtility.IfElseUtilityMethod(ref booly, ref decreaseInPMInfluence, ref newCity.GrowthGreaterThan15Turns);
 
                 //COMMERCE
-                Console.WriteLine("Does the City incur more expenses than income: y/n?");
-                booly = Console.ReadLine();
-                if (booly != "y" && booly != "n")
-                {
-                    TryAgain();
-                }
-                else if (booly == "y")
-                {
-                    newCity.NegativeCommerce = true;
-                    decreasePMInfluence(1, ref decreaseInPMInfluence);
-                    Console.WriteLine("(1)The PM's influence has been decreased by a total of: " + decreaseInPMInfluence);
-                }
-                else
-                {
-                    Console.WriteLine("Error");
-                }
-                booly = "";
+                booly = ConsoleUtility.Ask("Does the City incur more expenses than income: y/n?");
+                IfElseUtility.IfElseUtilityMethod(ref booly, ref decreaseInPMInfluence, ref newCity.NegativeCommerce);
 
-                Console.WriteLine("Is the City's Net Income less than 5: y/n?");
-                booly = Console.ReadLine();
-                if (booly != "y" && booly != "n")
-                {
-                    TryAgain();
-                }
-                else if (booly == "y")
-                {
-                    newCity.CommerceLessThan5 = true;
-                    decreasePMInfluence(1, ref decreaseInPMInfluence);
-                    Console.WriteLine("(1)The PM's influence has been decreased by a total of: " + decreaseInPMInfluence);
-                }
-                else
-                {
-                    Console.WriteLine("Error");
-                }
-                booly = "";
+                booly = ConsoleUtility.Ask("Is the City's Net Income less than 5: y/n?");
+                IfElseUtility.IfElseUtilityMethod(ref booly, ref decreaseInPMInfluence, ref newCity.CommerceLessThan5);
 
                 //CULTURE
-                Console.WriteLine("How many excess disloyalty if any exists? ");
-                newCity.ExcessNegativeLoyalty = int.Parse(Console.ReadLine());
-                decreasePMInfluence(newCity.ExcessNegativeLoyalty, ref decreaseInPMInfluence);
+                
+                newCity.ExcessNegativeLoyalty = int.Parse(ConsoleUtility.Ask("How many excess disloyalty if any exists? "));
+                DecreasePMInfluence(newCity.ExcessNegativeLoyalty, ref decreaseInPMInfluence);
 
                 //SCIENCE
-                Console.WriteLine("How many Education Districts/Buildings are AVAILABLE if any? ");
-                newCity.NumberOfScienceBuildingCanBuild = int.Parse(Console.ReadLine());
-                decreasePMInfluence(newCity.NumberOfScienceBuildingCanBuild, ref decreaseInPMInfluence);
+               
+                newCity.NumberOfScienceBuildingCanBuild = int.Parse(ConsoleUtility.Ask("How many Education Districts/Buildings are AVAILABLE if any? "));
+                DecreasePMInfluence(newCity.NumberOfScienceBuildingCanBuild, ref decreaseInPMInfluence);
 
                 //AMENITIES
-                Console.WriteLine("How much if any excess unhappiness does the City suffer?");
-                newCity.ExcessUnhappiness = int.Parse(Console.ReadLine());
-                decreasePMInfluence(newCity.ExcessUnhappiness, ref decreaseInPMInfluence);
+                
+                newCity.ExcessUnhappiness = int.Parse(ConsoleUtility.Ask("How much if any excess unhappiness does the City suffer?"));
+                DecreasePMInfluence(newCity.ExcessUnhappiness, ref decreaseInPMInfluence);
 
                 //CALC ANOTHER CITY
                 Console.WriteLine("(2)The PM's influence has been decreased by a total of: " + decreaseInPMInfluence);
@@ -208,25 +112,28 @@ namespace civCityCalculator
                 if (Console.ReadLine() != "y")
                 {
                     calculate = false;
+                    Dump(newCity);
                 }
                 else
                 {
                     decreaseInPMInfluence = decreaseInNationalPMInfluence;
+                    Dump(newCity);
                 }
 
             }
         }
 
-        static int decreaseNationalPMInfluence(int number, ref int decreaseInNationalPMInfluence)
+        public static int DecreasePMInfluence(int number, ref int decreaseInInfluence)
         {
             while (number > 0)
             {
-                decreaseInNationalPMInfluence++;
+                decreaseInInfluence++;
                 number--;
             }
-            Console.WriteLine("The PM's influence has been decreased by a total of: " + decreaseInNationalPMInfluence);
-            return decreaseInNationalPMInfluence;
+            Console.WriteLine("The PM's influence has been decreased by a total of: " + decreaseInInfluence);
+            return decreaseInInfluence;
         }
+        /*
         static int decreasePMInfluence(int number, ref int decreaseInPMInfluence)
         {
             while (number > 0)
@@ -237,12 +144,7 @@ namespace civCityCalculator
             Console.WriteLine("The PM's influence has been decreased by a total of: " + decreaseInPMInfluence);
             return decreaseInPMInfluence;
         }
-
-        static string TryAgain()
-        {
-            Console.WriteLine("Input invalid, please try again:");
-            return Console.ReadLine();
-        }
+        */
 
         class City
         {
@@ -278,6 +180,11 @@ namespace civCityCalculator
             public int NumberCivsWithBiggerMilitary;
             //Inustry 
             public int NumberCivsWithHigherProduction;
+        }
+        private static void Dump(object o)
+        {
+            string json = JsonConvert.SerializeObject(o, Formatting.Indented);
+            Console.WriteLine(json);
         }
     }
 }
